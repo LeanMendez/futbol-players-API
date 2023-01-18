@@ -6,21 +6,29 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "babel": "./node_modules/.bin/babel src --out-dir lib"
   },
   "keywords": [],
   "author": "Leandro A. Mendez",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^4.9.0",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.0.1",
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.32.0",
     "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-n": "^15.0.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "nodemon": "^2.0.20"
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "nodemon": "^2.0.20",
+    "prisma": "^4.9.0"
   }
 }

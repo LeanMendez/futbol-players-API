@@ -1,16 +1,18 @@
 import express from 'express'
+import playersController from '../../controllers/playerController.js'
 
-const v1Router = express.Router()
+const router = express.Router()
 
-v1Router.get('/', (req, res) => {
-  res.send('ACA SALEN LOS PLAYERS')
-})
+router.get('/', playersController.getAllPLayers)
 
-v1Router.get('/playerId', (req, res) => {
-  res.send('UN SOLO PLAYER')
-})
+router.get('/:playerId', playersController.getOnePlayer)
 
-v1Router.post('/', (req, res) => {
+router.post('/', playersController.createNewPlayer)
 
-})
-export { v1Router }
+router.put('/:playerId', playersController.updateOnePlayer)
+
+router.delete('/', playersController.deleteAllPlayers)
+
+router.delete('/:playerId', playersController.deleteOnePlayer)
+
+export default router

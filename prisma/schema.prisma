@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Players {
+  id              String  @id @default(auto()) @map("_id") @db.ObjectId
+  personal_info   Personal_information
+  club_info       Club_information
+  national_team   National_team  
+}
+
+type Personal_information{
+  full_name       String
+  nickname        String?
+  date_birth      String
+  nationality     String
+  ph_url          String
+}
+
+type Club_information{
+  current_team    String
+  league          String
+  club_position   String
+  club_number     String
+}
+
+type National_team{
+  team            String
+  nat_position    String
+  nat_number      String
+}
