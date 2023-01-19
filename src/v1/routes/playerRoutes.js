@@ -1,9 +1,10 @@
 import express from 'express'
 import playersController from '../../controllers/playerController.js'
+import { pagination } from '../../middleware/pagination.js'
 
 const router = express.Router()
 
-router.get('/', playersController.getAllPLayers)
+router.get('/', pagination(), playersController.getAllPLayers)
 
 router.get('/:playerId', playersController.getOnePlayer)
 

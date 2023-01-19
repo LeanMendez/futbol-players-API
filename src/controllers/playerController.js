@@ -1,9 +1,10 @@
 import playerService from '../services/playerService.js'
+import prisma from '../database/db.js'
 
 const getAllPLayers = async (req, res) => {
   try {
-    const allPlayers = await playerService.getAllPLayers()
-    res.status(200).json({ status: 'OK', data: allPlayers })
+    // const allPlayers = await playerService.getAllPLayers()
+    res.status(200).json({ count: await prisma.players.count(), ...res.paginated })
   } catch (error) {
     console.error(error)
     res.status(400).json({
