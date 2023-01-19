@@ -1,10 +1,19 @@
 import express from 'express'
+import path from 'path'
+import { fileURLToPath } from 'url'
 import cors from 'cors'
+
 import router from './v1/routes/playerRoutes.js'
+import { swaggerDocs as V1SwaggerDocs } from './v1/swagger.js'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const app = express()
 const PORT = process.env.PORT || 8080
 
+console.log(__dirname + '/public')
+app.use(express.static(path.join(__dirname + '/../public')))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cors({
@@ -25,5 +34,6 @@ app.use(function (req, res, next) {
 app.use('/api/v1/players', router)
 
 app.listen(PORT, () => {
-  console.log(`API running on http://localhost:${PORT}`)
+  console.log(`API running on port: ${PORT} and you can see the API on http://localhost:${PORT}/api/v1/`)
+  V1SwaggerDocs(app, PORT)
 })
