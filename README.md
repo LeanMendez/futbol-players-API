@@ -5,18 +5,27 @@
 ![ScreenShot](https://raw.github.com/LeanMendez/futbol-players-API/main/public/scaloneta.jpg) 
 
 ## Start proyect
-
 ```bash
+#you can use npm or pnpm package manager as you like, I highly recommend to use pnpm
+
+
     npm install
+
     npm run dev
 
     pnpm dev
-
-    yarn dev
 ```
+
+*if you will use npm, delete pnpm-lock.yaml file and do npm install*
+
 Also you can see it deployed [here](https://scaloneta-api.up.railway.app/)! 
 
+## Swagger Documentation
 
+You can access to swagger documentation [here](https://scaloneta-api.up.railway.app/api/v1/docs/)
+
+
+## Avalaible Routes
 
 |HTTP METHOD           |      GET           |
 |----------------------|--------------------|
@@ -25,9 +34,6 @@ Also you can see it deployed [here](https://scaloneta-api.up.railway.app/)!
 
 
 
-## api/v1/players
-
-This call will return all the players available. The default is 60 (there are less than 60 players at the moment because only 26 can play in the team at the same time).
 
 * Example of object: 
 
