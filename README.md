@@ -2,7 +2,7 @@
 
 
 
-![ScreenShot](https://raw.github.com/LeanMendez/futbol-players-API/main/assets/scaloneta.jpg) 
+![ScreenShot](https://raw.github.com/LeanMendez/futbol-players-API/main/public/scaloneta.jpg) 
 
 ## Start proyect
 
