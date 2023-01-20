@@ -13,7 +13,7 @@ export function pagination () {
 
     if (endIndex < await prisma.players.count()) {
       data.next = {
-        url: `http://localhost:8080/api/v1/players?page=${page + 1}&limit=${limit}`,
+        url: `https://scaloneta-api.up.railway.app/api/v1/players?page=${page + 1}&limit=${limit}`,
         page: page + 1,
         limit
       }
@@ -21,7 +21,7 @@ export function pagination () {
 
     if (startIndex > 0) {
       data.previous = {
-        url: `http://localhost:8080/api/v1/players?page=${page - 1}&limit=${limit}`,
+        url: `https://scaloneta-api.up.railway.app/api/v1/players?page=${page - 1}&limit=${limit}`,
         page: page - 1,
         limit
       }
