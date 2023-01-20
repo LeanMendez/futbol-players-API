@@ -18,7 +18,7 @@
 
 *if you will use npm, delete pnpm-lock.yaml file and do npm install*
 
-Also you can see it deployed [here](https://scaloneta-api.up.railway.app/)! 
+Also you can see it deployed [here](https://scaloneta-api.up.railway.app/api/v1/players)! 
 
 ## Swagger Documentation
 
